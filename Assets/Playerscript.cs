@@ -7,6 +7,7 @@ public class Playerscript : MonoBehaviour
     int health = 10;
 
     float vægt = 63.5f;
+    
 
     public string navn = "John";
 
@@ -17,12 +18,15 @@ public class Playerscript : MonoBehaviour
 
     public InputAction moveAction;
     
+    
     //Among us
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         moveAction.Enable();
+        
+        
         
         print("Among us");
         
@@ -39,5 +43,6 @@ public class Playerscript : MonoBehaviour
         rb.linearVelocity = newVelocity;
         
 
+        
     }
 }
