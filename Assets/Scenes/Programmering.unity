@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5796430ff0dbff4e9ea99beb4ff5b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 3.17
 --- !u!136 &163143610
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -581,6 +582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287585c08a51b47488b678b3b949f217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navn: johnPork
+  speed: 10.55
 --- !u!136 &1414501640
 CapsuleCollider:
   m_ObjectHideFlags: 0

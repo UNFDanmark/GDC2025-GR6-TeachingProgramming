@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Evilscript : MonoBehaviour
 {
+    public float cooldown = 2f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,6 +12,6 @@ public class Evilscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
