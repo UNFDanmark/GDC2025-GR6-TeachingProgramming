@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class Playerscript : MonoBehaviour
 {
@@ -10,11 +12,17 @@ public class Playerscript : MonoBehaviour
 
     bool erSej = true;
     public float speed = 10f;
+
+    Rigidbody rb;
+
+    public InputAction moveAction;
     
     //Among us
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        moveAction.Enable();
         
         print("Among us");
         
@@ -23,6 +31,13 @@ public class Playerscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("Who dis?");
+        
+        Vector2 moveInput = moveAction.ReadValue<Vector2>();
+        Vector3 newVelocity = rb.linearVelocity;
+        newVelocity.x = moveInput.x * speed;
+        newVelocity.z = moveInput.y * speed;
+        rb.linearVelocity = newVelocity;
+        
+
     }
 }
