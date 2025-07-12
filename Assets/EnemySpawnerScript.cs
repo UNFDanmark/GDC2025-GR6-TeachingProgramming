@@ -5,7 +5,8 @@ public class EnemySpawnerScript : MonoBehaviour
     public GameObject enemy;
 
     public float spawncooldown = 2f;
-
+    public int minSpawn;
+    public int maxSpawn;
     float currentSpawnTime;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,8 +22,8 @@ public class EnemySpawnerScript : MonoBehaviour
         if (currentSpawnTime<=0)
         {
             Vector3 spawnPosition = transform.position;
-            spawnPosition.x += Random.Range(-5, 5);
-            spawnPosition.z += Random.Range(-5, 5);
+            spawnPosition.x += Random.Range(minSpawn, maxSpawn);
+            spawnPosition.z += Random.Range(minSpawn, maxSpawn);
             
             Instantiate(enemy, spawnPosition, Quaternion.identity);
             currentSpawnTime = spawncooldown;

@@ -804,7 +804,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 545507696223150039, guid: aab1fe181feaec64e988bb00be172b2a, type: 3}
-  spawncooldown: 0.3086375
+  spawncooldown: 0.2057583
+  minSpawn: -20
+  maxSpawn: 21
 --- !u!4 &614899152
 Transform:
   m_ObjectHideFlags: 0
@@ -1307,6 +1309,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 971850351652740963, guid: c57069a1867d2f54b973004f72f6a4b6, type: 3}
   spawncooldown: 2
+  minSpawn: -10
+  maxSpawn: 11
 --- !u!4 &1584402260
 Transform:
   m_ObjectHideFlags: 0

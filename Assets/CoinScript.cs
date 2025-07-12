@@ -19,7 +19,6 @@ public class CoinScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        print("helo");
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
