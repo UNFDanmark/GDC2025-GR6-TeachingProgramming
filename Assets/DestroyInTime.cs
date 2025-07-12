@@ -1,27 +1,23 @@
-using System;
 using UnityEngine;
 
-public class Evilscript : MonoBehaviour
+public class DestroyInTime : MonoBehaviour
 {
+    public float lifetime;
+
+    float progress;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        print("Hej jeg er evil");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Bullet"))
+        progress += Time.deltaTime;
+        if (progress > lifetime)
         {
             Destroy(gameObject);
         }
-        
     }
 }

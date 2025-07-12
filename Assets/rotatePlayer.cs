@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class rotatePlayer : MonoBehaviour
+
 {
     public float rotateSpeed;
     public InputAction rotateAction;
