@@ -24,7 +24,7 @@ public class shootingScript : MonoBehaviour
         cooldownProgress -= Time.deltaTime;
         if (shoot.IsPressed() && cooldownProgress < 0)
         {
-           GameObject bulletClone = Instantiate(BulletPrefab, transform.position, quaternion.identity);
+           GameObject bulletClone = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
            Rigidbody bulletRb = bulletClone.GetComponent<Rigidbody>();
            bulletRb.linearVelocity = transform.forward * bulletSpeed;
            
