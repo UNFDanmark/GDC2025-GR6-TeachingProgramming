@@ -1,18 +1,20 @@
-using System;
+
 using UnityEngine;
     
 public class CoinScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float spinningSpeed;
+    float angle;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        angle += Time.deltaTime * spinningSpeed;
+        transform.rotation = Quaternion.Euler(90, angle, 0);
     }
 
     void OnTriggerEnter(Collider other)
@@ -22,5 +24,6 @@ public class CoinScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 }
