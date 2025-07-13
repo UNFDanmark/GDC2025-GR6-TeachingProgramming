@@ -6,6 +6,7 @@ public class Evilscript : MonoBehaviour
 {
     public NavMeshAgent agent;
     public GameObject BulletPrefab;
+    public Animator animator;
 
     public float coolclown; 
     float cooldownProgress;
@@ -30,8 +31,8 @@ public class Evilscript : MonoBehaviour
                 GameObject bulletClone = Instantiate(BulletPrefab, BulletSpawn.position, Quaternion.identity);
                 Rigidbody bulletRb = bulletClone.GetComponent<Rigidbody>();
                 bulletRb.linearVelocity = transform.forward * bulletSpeed;
-           
-           
+            
+                animator.SetTrigger("Shoot");
            
                 cooldownProgress = coolclown;
         }

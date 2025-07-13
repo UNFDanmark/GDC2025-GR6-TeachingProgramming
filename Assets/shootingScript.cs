@@ -11,6 +11,7 @@ public class shootingScript : MonoBehaviour
     public InputAction shoot;
 
     public float bulletSpeed=5f;
+    public Animator animator;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,7 +28,8 @@ public class shootingScript : MonoBehaviour
            GameObject bulletClone = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
            Rigidbody bulletRb = bulletClone.GetComponent<Rigidbody>();
            bulletRb.linearVelocity = transform.forward * bulletSpeed;
-           
+           animator.SetTrigger("Shoot");
+               
            
            
            cooldownProgress = coolclown;

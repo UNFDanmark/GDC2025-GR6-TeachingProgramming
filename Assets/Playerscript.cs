@@ -9,7 +9,7 @@ public class Playerscript : MonoBehaviour
     Rigidbody rb;
 
     public InputAction moveAction;
-    
+    public Animator animator;
     
     //Among us
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +26,7 @@ public class Playerscript : MonoBehaviour
         newVelocity.x = moveInput.x * speed;
         newVelocity.z = moveInput.y * speed;
         rb.linearVelocity = newVelocity;
+        animator.SetFloat("Speed",newVelocity.magnitude);
     }
     void OnCollisionEnter(Collision other)
     {
