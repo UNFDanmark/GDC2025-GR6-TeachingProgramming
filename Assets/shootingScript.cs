@@ -34,7 +34,7 @@ public class shootingScript : MonoBehaviour
            Rigidbody bulletRb = bulletClone.GetComponent<Rigidbody>();
            bulletRb.linearVelocity = transform.forward * bulletSpeed;
            animator.SetTrigger("Shoot");
-           
+           audioSource.pitch = UnityEngine.Random.Range(0.3f, 3f);
            audioSource.Play();
            
            cooldownProgress = coolclown;
