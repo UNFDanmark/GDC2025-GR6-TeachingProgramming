@@ -10,6 +10,8 @@ public class Playerscript : MonoBehaviour
 
     public InputAction moveAction;
     public Animator animator;
+
+    public GameObject gameOverScreen;
     
     //Among us
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,6 +36,7 @@ public class Playerscript : MonoBehaviour
         {
             rb.linearVelocity += Vector3.up * 20;
             Destroy(other.gameObject);
+            gameOverScreen.SetActive(true);
         }
     }
 }

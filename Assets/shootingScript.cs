@@ -1,6 +1,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = Unity.Mathematics.Random;
 
 public class shootingScript : MonoBehaviour
 {
@@ -12,11 +13,15 @@ public class shootingScript : MonoBehaviour
 
     public float bulletSpeed=5f;
     public Animator animator;
+
+    AudioSource audioSource;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         shoot.Enable();
+        audioSource = GetComponent < AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -29,8 +34,8 @@ public class shootingScript : MonoBehaviour
            Rigidbody bulletRb = bulletClone.GetComponent<Rigidbody>();
            bulletRb.linearVelocity = transform.forward * bulletSpeed;
            animator.SetTrigger("Shoot");
-               
            
+           audioSource.Play();
            
            cooldownProgress = coolclown;
         }
